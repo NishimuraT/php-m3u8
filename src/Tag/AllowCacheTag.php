@@ -31,7 +31,7 @@ class AllowCacheTag extends AbstractHeadTag
 
     protected function read($line)
     {
-        preg_match('/^#EXT-X-ALLOW-CACHE:(\.+)/', $line, $matches);
+        preg_match('/^#EXT-X-ALLOW-CACHE:(.+)/', $line, $matches);
 
         $this->allowCache = $matches[1] == 'YES';
     }
