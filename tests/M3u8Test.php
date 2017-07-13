@@ -27,6 +27,8 @@ class M3u8Test extends TestCase
         $this->assertEquals(33, $m3u8->getMediaSequence());
         $this->assertEquals(false, $m3u8->getAllowCache());
         $this->assertEquals(3, $m3u8->getDiscontinuitySequence());
+        $this->assertEquals("AES-128", $m3u8->getKeyTag()->getMethod());
+        $this->assertEquals("http://host/key.bin", $m3u8->getKeyTag()->getUri());
 
         $segment = $m3u8->getSegments()->offsetGet(0);
         $this->assertEquals(12, $segment->getExtinfTag()->getDuration());

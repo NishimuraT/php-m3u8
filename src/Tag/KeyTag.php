@@ -31,7 +31,7 @@ class KeyTag extends AbstractHeadTag
 
     protected function read($line)
     {
-        preg_match('/^#EXT-X-KEY:(.+),(.+),(.+)/', $line, $matches);
+        preg_match('/^#EXT-X-KEY:METHOD\=(.+),URI\=\"(.+)\"/', $line, $matches);
 
         $this->method = $matches[1];
         $this->uri = $matches[2];
