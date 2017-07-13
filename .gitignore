@@ -4,3 +4,4 @@ phpunit.xml
 vendor
 tags
 *.cache
+.idea/
