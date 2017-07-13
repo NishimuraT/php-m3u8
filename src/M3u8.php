@@ -17,6 +17,7 @@ class M3u8 extends AbstractContainer
     private $versionTag;
     private $targetDurationTag;
     private $mediaSequenceTag;
+    private $allowCacheTag;
     private $discontinuitySequenceTag;
     private $segments;
     private $endlistTag;
@@ -27,6 +28,7 @@ class M3u8 extends AbstractContainer
         $this->versionTag = new Tag\VersionTag();
         $this->targetDurationTag = new Tag\TargetDurationTag();
         $this->mediaSequenceTag = new Tag\MediaSequenceTag();
+        $this->allowCacheTag = new Tag\AllowCacheTag();
         $this->discontinuitySequenceTag = new Tag\DiscontinuitySequenceTag();
         $this->segments = new Segments($this);
         $this->endlistTag = new Tag\EndlistTag();
@@ -69,6 +71,16 @@ class M3u8 extends AbstractContainer
         return $this->mediaSequenceTag->getMediaSequence();
     }
 
+    public function getAllowCacheTag()
+    {
+        return $this->allowCacheTag;
+    }
+
+    public function getAllowCache()
+    {
+        return $this->allowCacheTag->getAllowCache();
+    }
+
     public function getDiscontinuitySequenceTag()
     {
         return $this->discontinuitySequenceTag;
@@ -107,6 +119,7 @@ class M3u8 extends AbstractContainer
         return array(
             $this->m3uTag,
             $this->versionTag,
+            $this->allowCacheTag,
             $this->targetDurationTag,
             $this->mediaSequenceTag,
             $this->discontinuitySequenceTag,

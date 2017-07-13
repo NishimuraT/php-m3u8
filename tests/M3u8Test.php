@@ -25,6 +25,7 @@ class M3u8Test extends TestCase
         $this->assertEquals(2, $m3u8->getVersion());
         $this->assertEquals(12, $m3u8->getTargetDuration());
         $this->assertEquals(33, $m3u8->getMediaSequence());
+        $this->assertEquals(false, $m3u8->getAllowCache());
         $this->assertEquals(3, $m3u8->getDiscontinuitySequence());
 
         $segment = $m3u8->getSegments()->offsetGet(0);

@@ -23,6 +23,7 @@ class DummyM3u8Factory
         $m3u8->getMediaSequenceTag()->setMediaSequence(33);
         $m3u8->getDiscontinuitySequenceTag()->setDiscontinuitySequence(3);
         $m3u8->getTargetDurationTag()->setTargetDuration(12);
+        $m3u8->getAllowCacheTag()->setAllowCache(false);
         $m3u8->getEndlistTag()->setEndless(true);
 
         $segment = new Segment($version);
@@ -46,6 +47,7 @@ class DummyM3u8Factory
             return <<<'M3U8'
 #EXTM3U
 #EXT-X-VERSION:2
+#EXT-X-ALLOW-CACHE:NO
 #EXT-X-TARGETDURATION:12
 #EXT-X-MEDIA-SEQUENCE:33
 #EXT-X-DISCONTINUITY-SEQUENCE:3
@@ -61,6 +63,7 @@ M3U8;
         return <<<'M3U8'
 #EXTM3U
 #EXT-X-VERSION:3
+#EXT-X-ALLOW-CACHE:NO
 #EXT-X-TARGETDURATION:12
 #EXT-X-MEDIA-SEQUENCE:33
 #EXT-X-DISCONTINUITY-SEQUENCE:3
