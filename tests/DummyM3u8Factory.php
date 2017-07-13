@@ -24,6 +24,7 @@ class DummyM3u8Factory
         $m3u8->getDiscontinuitySequenceTag()->setDiscontinuitySequence(3);
         $m3u8->getTargetDurationTag()->setTargetDuration(12);
         $m3u8->getAllowCacheTag()->setAllowCache(false);
+        $m3u8->getKeyTag()->setUri('http://host/key.bin');
         $m3u8->getEndlistTag()->setEndless(true);
 
         $segment = new Segment($version);
@@ -51,6 +52,7 @@ class DummyM3u8Factory
 #EXT-X-TARGETDURATION:12
 #EXT-X-MEDIA-SEQUENCE:33
 #EXT-X-DISCONTINUITY-SEQUENCE:3
+#EXT-X-KEY:METHOD=AES-128,URI="http://host/key.bin"
 #EXTINF:12,hello world
 #EXT-X-BYTERANGE:10000@100
 stream33.ts
@@ -67,6 +69,7 @@ M3U8;
 #EXT-X-TARGETDURATION:12
 #EXT-X-MEDIA-SEQUENCE:33
 #EXT-X-DISCONTINUITY-SEQUENCE:3
+#EXT-X-KEY:METHOD=AES-128,URI="http://host/key.bin"
 #EXTINF:12.000,hello world
 #EXT-X-BYTERANGE:10000@100
 stream33.ts
